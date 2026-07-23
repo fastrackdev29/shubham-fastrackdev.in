@@ -467,19 +467,19 @@
       <form id="contactForm" class="contact-form">
         <div class="form-group">
           <label for="name">NAME</label>
-          <input type="text" id="name" name="Name" class="form-control" placeholder="Your Full Name" required>
+          <input type="text" id="name" name="name" class="form-control" placeholder="Your Full Name" required>
         </div>
         <div class="form-group">
           <label for="phone">PHONE / WHATSAPP</label>
-          <input type="tel" id="phone" name="Phone" class="form-control" placeholder="+91 98765 43210" required>
+          <input type="tel" id="phone" name="phone" class="form-control" placeholder="+91 98765 43210" required>
         </div>
         <div class="form-group">
           <label for="email">EMAIL</label>
-          <input type="email" id="email" name="Email" class="form-control" placeholder="name@example.com" required>
+          <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" required>
         </div>
         <div class="form-group">
           <label for="service">SERVICE NEEDED</label>
-          <select id="service" name="Service" class="form-control" required>
+          <select id="service" name="service" class="form-control" required>
             <option value="" disabled selected>Select a Service</option>
             <option value="Web Development">Web Development</option>
             <option value="App Development">App Development</option>
@@ -490,7 +490,7 @@
         </div>
         <div class="form-group">
           <label for="message">MESSAGE</label>
-          <textarea id="message" name="Message" class="form-control" rows="4" placeholder="Briefly describe your project or requirements..." required></textarea>
+          <textarea id="message" name="message" class="form-control" rows="4" placeholder="Briefly describe your project or requirements..." required></textarea>
         </div>
         <button type="submit" id="submitBtn" class="btn-primary">Send Details</button>
         <div id="formStatus" style="display:none;"></div>
@@ -552,10 +552,12 @@
       submitBtn.disabled = true;
       formStatus.style.display = 'none';
 
+      const formData = new FormData(contactForm);
+
       fetch(SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
-        body: new FormData(contactForm)
+        body: formData
       })
       .then(() => {
         formStatus.textContent = "Thanks! I'll get back to you within a day.";
