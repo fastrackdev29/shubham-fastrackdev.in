@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrainX India Case Study | FastTrack Dev</title>
+<meta name="description" content="Read how FastTrack Dev built a high-speed React platform integrated with Make.com and WhatsApp for sub-second lead routing for BrainX India.">
+<meta name="author" content="Shubham Kumar">
+<meta name="application-name" content="FastTrack Dev">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#111827">
+<link rel="canonical" href="https://fastrackdev.in/case-studies/brainx-india">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://fastrackdev.in/case-studies/brainx-india">
+<meta property="og:title" content="BrainX India Case Study | FastTrack Dev">
+<meta property="og:description" content="Sub-second lead routing platform built with React, TypeScript, Make.com, and WhatsApp API.">
+<meta property="og:image" content="https://fastrackdev.in/assets/brainx.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://fastrackdev.in/case-studies/brainx-india">
+<meta name="twitter:title" content="BrainX India Case Study | FastTrack Dev">
+<meta name="twitter:description" content="Sub-second lead routing platform built with React, TypeScript, Make.com, and WhatsApp API.">
+<meta name="twitter:image" content="https://fastrackdev.in/assets/brainx.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CreativeWork",
+      "@id": "https://fastrackdev.in/case-studies/brainx-india#work",
+      "name": "BrainX India Diagnostic Platform & AI Lead Routing",
+      "author": {
+        "@type": "Person",
+        "name": "Shubham Kumar"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FastTrack Dev",
+        "url": "https://fastrackdev.in"
+      },
+      "description": "Custom web application and AI workflow automation case study."
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{ --bg:#F8F5EF; --surface:#FFFFFF; --surface-2:#F1ECE2; --accent:#C2661A; --teal:#0B8578; --text:#211D18; --muted:#6E6A62; --line:#E4DFD3; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{ background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; overflow-x:hidden; }
+  h1,h2,h3,.display{font-family:'Space Grotesk', sans-serif;}
+  .mono{font-family:'JetBrains Mono', monospace;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:900px; margin:0 auto; padding:0 24px;}
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(248, 245, 239, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); padding: 16px 0; }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; }
+  .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: var(--text); }
+  .logo span { color: var(--accent); }
+  .navlinks { display: flex; gap: 28px; }
+  .navlinks a { font-size: 14px; font-weight: 500; color: var(--muted); }
+  .navlinks a:hover, .navlinks a.active { color: var(--accent); }
+  .nav-cta { background: var(--accent); color: #FFF !important; padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 13.5px; }
+
+  .header { padding: 60px 0 30px; border-bottom: 1px solid var(--line); }
+  .breadcrumb { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--accent); margin-bottom: 12px; }
+  .title { font-size: 38px; font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
+
+  .cs-hero-img { width: 100%; border-radius: 12px; border: 1px solid var(--line); margin: 30px 0; }
+
+  .block { margin-bottom: 40px; }
+  .block h2 { font-size: 24px; margin-bottom: 12px; }
+  .block p { font-size: 16px; color: #2C2825; line-height: 1.7; margin-bottom: 12px; }
+
+  .metric-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+  .metric-card { background: var(--surface); border: 1px solid var(--line); padding: 20px; border-radius: 8px; text-align: center; }
+  .metric-val { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: var(--accent); }
+  .metric-lbl { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  .btn-primary { background: var(--accent); color: #FFF; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 14.5px; display: inline-block; }
+
+  footer { background: #111827; color: #D1D5DB; padding: 60px 0 30px; font-size: 14px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; max-width: 1100px; margin-left: auto; margin-right: auto; }
+  .footer-title { color: #FFF; font-size: 15px; margin-bottom: 16px; }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 10px; }
+  .footer-links a { color: #9CA3AF; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; color: #9CA3AF; font-size: 13px; max-width: 1100px; margin-left: auto; margin-right: auto; }
+  @media(max-width:768px){ .metric-cards { grid-template-columns: 1fr; } .title { font-size: 28px; } .navlinks { display: none; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="../index.html" class="logo">Shubham <span>|</span> FastTrack Dev</a>
+    <div class="navlinks">
+      <a href="../index.html#services">Services</a>
+      <a href="index.html" class="active">Case Studies</a>
+      <a href="../blog/index.html">Blog</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+    <a href="../index.html#contact" class="nav-cta">Start a Project</a>
+  </div>
+</nav>
+
+<header class="header">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Case Studies</a> / <span>BrainX India</span></div>
+    <h1 class="title">BrainX India — Diagnostic Platform &amp; Sub-Second Lead Routing</h1>
+    <div style="font-family:'JetBrains Mono'; font-size:13px; color:var(--accent);">Completed Project · Education &amp; Diagnostics · Pune, India</div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <img src="../assets/brainx.png" alt="BrainX India platform preview" class="cs-hero-img" width="1920" height="890" loading="lazy" decoding="async">
+
+    <!-- PROBLEM -->
+    <div class="block">
+      <h2>1. The Problem</h2>
+      <p>Manual lead logging created significant response delays for academy inquiries across branches in Pune. Leads received via website forms sat unread in email inboxes for hours, resulting in missed student registrations and dropped inquiries.</p>
+    </div>
+
+    <!-- CHALLENGES -->
+    <div class="block">
+      <h2>2. Key Challenges</h2>
+      <p>The solution required zero manual entry overhead for branch managers while guaranteeing that prospective parents and students received instant appointment responses on WhatsApp within seconds of submission.</p>
+    </div>
+
+    <!-- SOLUTION -->
+    <div class="block">
+      <h2>3. The Solution</h2>
+      <p>Engineered a high-speed React platform connected directly to Make.com automation webhooks and Google Sheets API. Every submitted form triggers immediate data logging and formats a direct WhatsApp notification dispatch.</p>
+    </div>
+
+    <!-- METRICS & RESULTS -->
+    <div class="block">
+      <h2>4. Results &amp; Impact</h2>
+      <div class="metric-cards">
+        <div class="metric-card">
+          <div class="metric-val">&lt; 1 sec</div>
+          <div class="metric-lbl">Lead Response Time</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">100%</div>
+          <div class="metric-lbl">Lead Capture Accuracy</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">0</div>
+          <div class="metric-lbl">Dropped Inquiries</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center; padding: 40px 0; background: var(--surface-2); border-radius: 10px; margin-bottom: 50px;">
+      <h3 style="font-size:22px; margin-bottom:10px;">Want Similar Automation for Your Business?</h3>
+      <p style="color:var(--muted); margin-bottom:20px;">Let’s build a high-speed platform with automated lead routing tailored to your business.</p>
+      <a href="../index.html#contact" class="btn-primary">Get Free Consultation</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div style="font-weight:700; color:#FFF; margin-bottom:12px;">FastTrack Dev</div>
+        <p style="color:#9CA3AF;">Building high-performance websites, AI automations, and custom business software.</p>
+      </div>
+      <div>
+        <div class="footer-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="index.html">Case Studies</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="../services/website-development.html">Website Development</a></li>
+          <li><a href="../services/ai-automation.html">AI Automation</a></li>
+          <li><a href="../services/web-application-development.html">Web Apps</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">Contact</div>
+        <p style="color:#9CA3AF;">Email: shubham@fastrackdev.in<br>Location: Pune, Maharashtra, India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 FastTrack Dev. All Rights Reserved.</div>
+      <div>Designed &amp; Developed by Shubham Kumar</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
